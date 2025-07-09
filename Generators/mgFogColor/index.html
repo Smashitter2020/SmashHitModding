@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>mgFogColor Generator</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .gradient-preview {
+      height: 300px;
+      border-radius: 8px;
+      margin-top: 1rem;
+      background: linear-gradient(to top, rgb(51,51,51), rgb(255,255,255));
+    }
+    .code-output {
+      font-family: monospace;
+      background: #212529;
+      color: white;
+      padding: 1rem;
+      border-radius: 6px;
+      margin-top: 1rem;
+    }
+    .form-range {
+      width: 100%;
+    }
+  </style>
+</head>
+<body class="bg-dark text-white" data-bs-theme="dark">
+  <div class="container py-5">
+    <h1 class="text-center mb-4">mgFogColor Generator</h1>
+    <p class="text-center">A generator is used to create Smash Hit gradients using <code>mgFogColor</code> function.</p>
+    
+    <div class="row g-4">
+      <!-- Bottom color -->
+      <div class="col-md-6">
+        <h5>Bottom Fog Color</h5>
+        <label>R0</label><input type="range" id="r0" min="0" max="2" step="0.01" value="0.2" class="form-range">
+        <label>G0</label><input type="range" id="g0" min="0" max="2" step="0.01" value="0.4" class="form-range">
+        <label>B0</label><input type="range" id="b0" min="0" max="2" step="0.01" value="0.7" class="form-range">
+      </div>
+
+      <!-- Top color -->
+      <div class="col-md-6">
+        <h5>Top Fog Color</h5>
+        <label>R1</label><input type="range" id="r1" min="-1" max="2" step="0.01" value="1" class="form-range">
+        <label>G1</label><input type="range" id="g1" min="-1" max="2" step="0.01" value="0.5" class="form-range">
+        <label>B1</label><input type="range" id="b1" min="-1" max="2" step="0.01" value="0.3" class="form-range">
+      </div>
+    </div>
+
+    <!-- Preview & Output -->
+    <div class="gradient-preview" id="preview"></div>
+    <div class="code-output" id="output">mgFogColor(0.2, 0.4, 0.7, 1, 0.5, 0.3)</div>
+  </div>
+
+  <script>
+    const sliders = ['r0','g0','b0','r1','g1','b1'].map(id => document.getElementById(id));
+    const output = document.getElementById('output');
+    const preview = document.getElementById('preview');
+
+    function update() {
+      const [r0, g0, b0, r1, g1, b1] = sliders.map(sl => parseFloat(sl.value));
+      output.textContent = `mgFogColor(${r0}, ${g0}, ${b0}, ${r1}, ${g1}, ${b1})`;
+
+      const color1 = `rgb(${Math.min(r0*255,255)}, ${Math.min(g0*255,255)}, ${Math.min(b0*255,255)})`;
+      const color2 = `rgb(${Math.min(Math.max(r1*255,0),255)}, ${Math.min(Math.max(g1*255,0),255)}, ${Math.min(Math.max(b1*255,0),255)})`;
+
+      preview.style.background = `linear-gradient(to top, ${color1}, ${color2})`;
+    }
+
+    sliders.forEach(slider => slider.addEventListener('input', update));
+    update();
+  </script>
+</body>
+</html>
