@@ -15,37 +15,54 @@
       </div>
       <div class="pt-5">
         <div class="alert alert-warning mb-3">Please note that you can use main game functions with caution, such as errors including in your code, can lead to mods that contain crashes, unstable, or become unplayable, which can lead to security risks.</div>
-        <div class="mb-3">There are 146 Main Game Functions (mg) included for Smash Hit mods.</div>
+        <div class="mb-3">There are 146 Main Game Functions (mg) included for Smash Hit mods, but sometimes commands include.</div>
         <div class="mb-3">
-          <div><code>mgBodyContainsPoint</code></div>
+          <div class="fs-3"><code>mgBodyContainsPoint</code></div>
           <p><code>mgBodyContainsPoint</code> is a collision detection function whether a specific point in 3D space is inside a physics body that you've created.</p>
           <p>Parameters: <code>mgBodyContainsPoint(bodyName, x, y, z)</code></p>
         </div>
         <div class="mb-3">
-          <div><code>mgBodyDecal</code></div>
+          <div class="fs-3"><code>mgBodyDecal</code></div>
           <p><code>myBodyDecal</code> is a function that applies a decal texture to a physics body that adds detail to the surface.</p>
           <p>Parameters: <code>mgBodyDecal(bodyName, textureName)</code></p>
         </div>
         <div class="mb-3">
-          <div><code>mgBodyIsBroken</code></div>
+          <div class="fs-3"><code>mgBodyIsBroken</code></div>
           <p><code>mgBodyIsBroken</code> is a function whether or not a body is broken. If it has, then the boolean is <code>true</code>, if not then the boolean is <code>false</code>.</p>
           <p>Parameters: <code>myBodyIsBroken(body)</code></p>
         </div>
         <div class="mb-3">
-          <div><code>mgBodyPointToWorld</code></div>
+          <div class="fs-3"><code>mgBodyPointToWorld</code></div>
           <p><code>mgBodyPointToWorld</code> is a function where it converts a point from the local coordinate system of a body to world coordinate system.</p>
           <p>Parameters: <code>mgBodyPointToWorld(bodyName, x, y, z)</code></p>
         </div>
         <div class="mb-3">
-          <div><code>mgBodyVecToWorld</code></div>
+          <div class="fs-3"><code>mgBodyVecToWorld</code></div>
           <p><code>mgBodyVecToWorld</code> is a function where it converts to a direction vector from local space to world space.</p>
           <p>Parameters: <code>mgBodyVecToWorld(bodyName, x, y, z)</code></p>
         </div>
-        <div>mgBox</div>
-        <div>mgBoxOverlap</div>
-        <div>mgCameraDistance</div>
-        <div>mgCameraShake</div>
-        <div>mgCanPass</div>
+        <div class="mb-3">
+          <div class="fs-3"><code>mgBox</code></div>
+          <p><code>mgBox</code> is used to create visible non-textured static boxes.</p>
+          <p>Parameters: <code>mgBox(x0, y0, z0, x1, y1, z1)</code></p>
+        </div>
+        <div class="mb-3">
+          <div class="fs-3"><code>mgBoxOverlap</code></div>
+          <p><code>mgBoxOverlap</code> is a command that is used to overlap boxes.</p>
+        </div>
+        <div class="mb-3">
+          <div class="fs-3"><code>mgCameraDistance</code></div>
+          <p><code>mgCameraDistance</code> is a function used to check current room distance.</p>
+        </div>
+        <div class="mb-3">
+          <div class="fs-3"><code>mgCameraShake</code></div>
+          <p><code>mgCameraShake</code> is used to visually shake camera in intensity.</p>
+          <p>Parameters: <code>mgCameraShake(shake)</code></p>
+        </div>
+        <div class="mb-3">
+          <div class="fs-3"><code>mgCanPass</code></div>
+          <p><code>mgCanPass</code> is a function to determine whether the player can pass through a specific object or area.</p>
+        </div>
         <div>mgCategory</div>
         <div>mgClear</div>
         <div>mgClearRunDelayed</div>
@@ -106,7 +123,11 @@
         <div>mgGetTimeStep</div>
         <div>mgGetUiSelectionCount</div>
         <div>mgGetUiSelectionInfo</div>
-        <div>mgGlow</div>
+        <div class="mb-3">
+          <div class="fs-3"><code>mgGlow</code></div>
+          <p><code>mgGlow</code> adds a glare/shine effect to somewhere of an object. This can be visually seen on crystals.</p>
+          <p>Parameters: <code>mgGlow(x, y, z)</code></p>
+        </div>
         <div>mgGravity</div>
         <div>mgHasBoss</div>
         <div>mgHideEdges</div>
